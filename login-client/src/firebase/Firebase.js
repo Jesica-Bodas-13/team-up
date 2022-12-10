@@ -6,9 +6,10 @@ const firebaseApp = firebase.initializeApp({
   authDomain: "team-up-560aa.firebaseapp.com",
   projectId: "team-up-560aa",
   storageBucket: "team-up-560aa.appspot.com",
-  messagingSenderId: "487223396749",
+  messagingSenderId:"487223396749",
   appId: "1:487223396749:web:f680e0024edfc1d90855c4"
 });
+  
 
 export default firebaseApp;
 

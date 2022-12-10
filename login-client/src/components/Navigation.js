@@ -17,10 +17,10 @@ const NavigationAuth = () => {
           <NavLink to='/'>Landing</NavLink>
         </li>
         <li>
-          <NavLink to='/home'>Home</NavLink>
+          <NavLink to='/users/signup'>Sign Up</NavLink>
         </li>
         <li>
-          <NavLink to='/account'>Account</NavLink>
+          <NavLink to='/users/login'>Login</NavLink>
         </li>
         <li>
           <SignOutButton />
@@ -38,11 +38,11 @@ const NavigationNonAuth = () => {
           <NavLink to='/'>Landing</NavLink>
         </li>
         <li>
-          <NavLink to='/signup'>Sign-up</NavLink>
+          <NavLink to='/users/signup'>Sign-up</NavLink>
         </li>
 
         <li>
-          <NavLink to='/signin'>Sign-In</NavLink>
+          <NavLink to='/users/login'>Log In</NavLink>
         </li>
       </ul>
     </nav>

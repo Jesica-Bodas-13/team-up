@@ -6,6 +6,8 @@ import {
   doSignInWithEmailAndPassword,
   doPasswordReset,
 } from '../firebase/FirebaseFunctions';
+import axios from "axios";
+import firebase from "firebase/compat/app"
 
 function SignIn() {
   const {currentUser} = useContext(AuthContext);
@@ -15,7 +17,19 @@ function SignIn() {
 
     try {
       await doSignInWithEmailAndPassword(email.value, password.value);
-    } catch (error) {
+      let idToken= await firebase.auth().currentUser.getIdToken()
+      axios.post("http://localhost:4000/users/login", null, {
+          headers: {
+            // "Content-Type": "application/json",
+            "Authorization": "Bearer " + idToken
+            // "Accept":"application/json"
+          },
+        }).then((response) => {
+          console.log(response)
+        }).catch((error) => {
+          console.log(error);
+        })
+    } catch (error) { 
       alert(error);
     }
   };
@@ -32,7 +46,10 @@ function SignIn() {
       );
     }
   };
+
+ 
   if (currentUser) {
+    console.log(currentUser);
     return <Navigate to='/home' />;
   }
   return (

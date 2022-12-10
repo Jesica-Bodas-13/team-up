@@ -14,9 +14,9 @@ function App() {
     <AuthProvider>
       <Router>
         <div className='App'>
-          <header className='App-header'>
+          {/* <header className='App-header'> */}
             <Navigation />
-          </header>
+          {/* </header> */}
         </div>
         <Routes>
           <Route path='/' element={<Landing />} />
@@ -26,8 +26,8 @@ function App() {
           <Route path='/account' element={<PrivateRoute />}>
             <Route path='/account' element={<Account />} />
           </Route>
-          <Route path='/signin' element={<SignIn />} />
-          <Route path='/signup' element={<SignUp />} />
+          <Route path='/users/login' element={<SignIn />} />
+          <Route path='/users/signup' element={<SignUp />} />
         </Routes>
       </Router>
     </AuthProvider>
